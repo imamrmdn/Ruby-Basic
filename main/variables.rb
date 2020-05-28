@@ -4,8 +4,9 @@ $global_variable1 = "hello people"
 $global_variable2 = 10, 16, 23
 
 class Global1
+    $global_variables = 10
     def print_global
-        puts "variable global in class Global1 is #$global_variable1 #$global_variable2"
+        puts "variable global in class Global1 is #$global_variable1, #$global_variable2"
     end
 end
 
@@ -41,7 +42,8 @@ customer3.details()
 class Mahasiswa
     @@no_mahasiswa = 10
     def initialize(id, nama, jurusan)
-        @mahasiswa_id = id
+        ##--variable lokal--
+        @mahasiswa_id = id 
         @mahasiswa_nama = nama
         @mahasiswa_jurusan = jurusan
     end
@@ -70,3 +72,21 @@ mahasiswaNew1.total_mahasiswa()
 # mahasiswaNew2.total_mahasiswa()
 # mahasiswaNew3.total_mahasiswa()
 mahasiswa1.total_mahasiswa() ##nambah nomer mahasiswa lagi
+
+
+##---variables constanta---
+# Konstanta dimulai dengan huruf besar. Konstanta yang didefinisikan dalam kelas atau modul dapat diakses dari dalam kelas atau modul itu, dan yang didefinisikan di luar kelas atau modul dapat diakses secara global.
+
+# Konstanta tidak dapat didefinisikan dalam metode. Contoh:
+class Example
+    VAR1 = 10
+    VAR2 = 20
+    def show
+        puts "value in var1 constant is #{VAR1}"
+        puts "value in var2 constant is #{VAR2}"
+    end
+end
+
+##create object
+object = Example.new()
+object.show
